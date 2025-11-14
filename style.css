@@ -1,11 +1,11 @@
-/* 🩵 Dasar Halaman */
+/*halaman dasar */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #F4F6FA; /* background */
+  background-color: #F4F6FA; 
   margin: 0;
 }
 
-/* 📐 Layout Grid 3 Kolom */
+/*layout 3 Kolom */
 .layout {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
@@ -14,9 +14,9 @@ body {
   padding: 10px;
 }
 
-/* 📁 Sidebar Kiri */
+/*Sidebar Kiri */
 .sidebar-left {
-  background-color: #d9d9d9; /* gray-light */
+  background-color: #d9d9d9; 
   border-radius: 20px;
   padding-top: 40px;
 }
@@ -38,10 +38,10 @@ body {
 
 .sidebar-left li:hover,
 .sidebar-left li.active {
-  background-color: #bcbcbc; /* gray-medium */
+  background-color: #bcbcbc;
 }
 
-/* 🧭 Konten Tengah */
+/*konten di tengah */
 .main-content {
   background-color: #f5f5f5;
   border-radius: 20px;
@@ -50,7 +50,7 @@ body {
   align-items: center;
 }
 
-/* 🧩 Header Atas */
+/*header atas */
 .header {
   display: flex;
   justify-content: space-between;
@@ -66,11 +66,11 @@ body {
 .header h2 {
   font-size: 18px;
   margin: 0;
-  color: #222; /* text-dark */
+  color: #222; 
 }
 
 .datetime {
-  background-color: #89b4f8; /* accent */
+  background-color: #89b4f8; 
   color: #fff;
   font-weight: 600;
   border-radius: 10px;
@@ -78,9 +78,9 @@ body {
   font-size: 13px;
 }
 
-/* 📦 Kotak Konten Utama */
+/*konten utama*/
 .content-box {
-  background-color: #d9d9d9; /* gray-light */
+  background-color: #d9d9d9; 
   border-radius: 20px;
   padding: 25px;
   width: 80%;
@@ -90,7 +90,7 @@ body {
 
 .content-box h2 {
   margin-top: 0;
-  color: #222; /* text-dark */
+  color: #222; 
 }
 
 .content-box p {
@@ -98,11 +98,11 @@ body {
   color: #444;
 }
 
-/* 🔘 Tombol */
+/* tombol */
 .btn {
   display: block;
   margin: 20px auto;
-  background-color: #1E90FF; /* primary */
+  background-color: #1E90FF; 
   border: none;
   border-radius: 10px;
   padding: 12px 25px;
@@ -117,7 +117,7 @@ body {
   background-color: #006be0;
 }
 
-/* 🏍️ Grid Motor */
+/* grid motor */
 .motor-grid {
   display: flex;
   justify-content: space-between;
@@ -145,12 +145,12 @@ body {
 .motor-card span {
   font-size: 26px;
   font-weight: bold;
-  color: #1E90FF; /* primary */
+  color: #1E90FF; 
 }
 
-/* 📦 Sidebar Kanan */
+/* sidebar kanan */
 .sidebar-right {
-  background-color: #d9d9d9; /* gray-light */
+  background-color: #d9d9d9; 
   border-radius: 20px;
   padding: 20px;
 }
@@ -166,7 +166,7 @@ body {
   border-radius: 12px;
   height: 80px;
   margin-top: 15px;
-  overflow: hidden; /* biar gambar nggak keluar dari kotak */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,12 +175,12 @@ body {
 .promo-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* gambar memenuhi box tapi tetap proporsional */
+  object-fit: cover; 
   border-radius: 12px;
 }
 
 
-/* 📱 Responsif */
+/* layar responsif */
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
