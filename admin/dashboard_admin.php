@@ -16,22 +16,21 @@ $data_lubuk_baja = mysqli_fetch_assoc($query_lubuk_baja);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MotoRent Dashboard</title>
+  <title>Dashboard Admin</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
 <body>
-  <div class="layout">
+  <div class="layout">  
     <aside class="sidebar-left">
       <ul>
-        <li class="active">Dashboard</li>
-        <li>Sewa Rumah</li>
-        <li>History</li>
+        <li class="active">Dashboard Admin </li>
+        <li><a href="data_rumah_admin.php">Data Rumah</a></li>
       </ul>
     </aside>
     <main class="main-content">
       <div class="header">
-        <h2>SELAMAT DATANG, PELANGGAN</h2>
+        <h2>KEEP GOING, ADMIN</h2>
         <div class="datetime" id="datetime">
           <?php
           date_default_timezone_set('Asia/Jakarta'); 
@@ -46,19 +45,15 @@ $data_lubuk_baja = mysqli_fetch_assoc($query_lubuk_baja);
         </div>
       </div>
       <section class="content-box">
-        <h2>HomeRent Present</h2>
+        <h2>Kata-Kata Hari ini Untuk Admin</h2>
         <p>
-          Kami hadir membantu proses penyewaan rumah biar nggak ribet.
-          Sistemnya udah otomatis mulai dari data pelanggan, daftar rumah,
-          transaksi sewa secara otomatis
+          Disemangati oleh orang yang bikin semangat hancur
         </p>
-
-        <button class="btn">Ayo Mulai Sewa Rumah</button>
 
         <h3>Wilayah Rumah Yang Tersedia Untuk Disewa</h3>
         <div class="motor-grid">
           <div class="motor-card">
-            <p>BATAM CENTER</p>
+          <p>BATAM CENTER</p>
             <span><?= $data_batam_center['total']; ?></span>
           </div>
           <div class="motor-card">
@@ -72,18 +67,5 @@ $data_lubuk_baja = mysqli_fetch_assoc($query_lubuk_baja);
         </div>
       </section>
     </main>
- <aside class="sidebar-right">
-  <h3>Promo</h3>
-
-  <div class="promo-box">
-    <img src="promo.jpg" alt="Promo 1">
-  </div>
-  <div class="promo-box">
-  </div>
-  <div class="promo-box">
-  </div>
-</aside>
-
-    </aside>
 </body>
 </html>

@@ -1,0 +1,284 @@
+/*halaman dasar */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #F4F6FA; 
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: #1E90FF;
+    }
+
+/*layout 3 Kolom */
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  height: 100vh;
+  gap: 10px;
+  padding: 10px;
+}
+
+/*Sidebar Kiri */
+.sidebar-left {
+  background-color: #d9d9d9; 
+  border-radius: 20px;
+  padding-top: 40px;
+}
+
+.sidebar-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-left li {
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar-left li:hover,
+.sidebar-left li.active {
+  background-color: #bcbcbc;
+}
+
+/*konten di tengah */
+.main-content {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*header atas */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-top: 15px;
+  background-color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.header h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #222; 
+}
+
+.datetime {
+  background-color: #89b4f8; 
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+/*konten utama*/
+.content-box {
+  background-color: #d9d9d9; 
+  border-radius: 20px;
+  padding: 25px;
+  width: 80%;
+  margin-top: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.content-box h2 {
+  margin-top: 0;
+  color: #222; 
+}
+
+.content-box p {
+  font-size: 14px;
+  color: #444;
+}
+
+/* tombol */
+.btn {
+  display: block;
+  margin: 20px auto;
+  background-color: #1E90FF; 
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #006be0;
+}
+
+/* grid motor */
+.motor-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.motor-card {
+  background-color: white;
+  width: 30%;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.motor-card p {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.motor-card span {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1E90FF; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* kepala table */
+table th {
+  background-color: #1E90FF;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+/* baris */
+table td {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* baris genap*/
+table tr:nth-child(even) {
+  background-color: #f4faff;
+}
+
+/* link aksi */
+table a {
+  color: #1E90FF;
+  font-weight: 600;
+}
+
+table a:hover {
+  color: red;
+}
+
+/* tombol */
+.btn.tambah {
+  display: block;
+  margin: 10px auto;
+  background-color: #1E90FF; 
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.tambah:hover {
+  background-color: #006be0;
+}
+
+.form-add input, .form-add select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.form-add input:focus,
+.form-add select:focus {
+  border-color: #1E90FF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(30,144,255,0.4);
+}
+
+.form-add label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  background-color: #1E90FF;
+}
+
+.btn-primary:hover {
+  background-color: #006be0;
+}
+
+.btn-danger {
+  background-color: #ff4d4d;
+}
+
+.btn-danger:hover {
+  background-color: #d40000;
+}
+
+
+/* layar responsif */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
+  .main-content {
+    width: 100%;
+  }
+  .motor-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .motor-card {
+    width: 100%;
+  }
+}
