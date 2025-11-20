@@ -19,7 +19,8 @@ include 'koneksi.php';
         <li ><a href="data_rumah_admin.php">Data Rumah</a></li>
         <li class="active">Data Transaksi</li>
         <li><a href="data_pelanggan.php">Data Pelanggan</a></li>
-        <li><a href="data_admin.php">Data Admin</a></li>       
+        <li><a href="data_admin.php">Data Admin</a></li>   
+        <li><a href="logout.php" class="logout">Logout</a></li>
       </ul>
       </ul>
     </aside>
@@ -51,6 +52,7 @@ include 'koneksi.php';
     JOIN pelanggan p ON s.id_pelanggan = p.id_pelanggan
     JOIN admin a ON s.id_admin = a.id_admin
     JOIN rumah r ON s.id_rumah = r.id_rumah
+    order by s.id_sewa ASC
 ");
           while($row = mysqli_fetch_assoc($result)){
           ?>

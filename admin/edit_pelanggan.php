@@ -22,8 +22,8 @@ $data = mysqli_fetch_assoc($result);
         <label>Nama:</label><br>
         <input type="text" name="nama" value="<?= $data['nama']; ?>" required><br><br>
 
-        <label>Alamat:</label><br>
-        <input type="text" name="alamat" value="<?= $data['alamat']; ?>" required><br><br>
+        <label>Domisili:</label><br>
+        <input type="text" name="domisili" value="<?= $data['domisili']; ?>" required><br><br>
 
         <label>Nomor Telepon:</label><br>
         <input type="text" name="no_hp" value="<?= $data['no_hp']; ?>" required><br><br>
@@ -40,12 +40,12 @@ $data = mysqli_fetch_assoc($result);
 <?php
 if(isset($_POST['update'])){
     $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
+    $domisili = $_POST['domisili'];
     $no_hp = $_POST['no_hp'];
 
     $query = "UPDATE pelanggan SET
               nama= '$nama',
-              alamat = '$alamat',
+              domisili = '$domisili',
               no_hp = '$no_hp'
               WHERE id_pelanggan = $id";
 

@@ -19,11 +19,10 @@ include 'koneksi.php';
         <label>Nama:</label><br>
         <input type="text" name="nama" required><br><br>
 
-        <label>Alamat:</label><br>
-        <input type="text" name="alamat" required><br><br>
+        <label>Domisili:</label><br>
+        <input type="text" name="domisili" required><br><br>
         <label>Nomor Telepon:</label><br>
         <input type="text" name="no_hp" required><br><br>
-        <p>Admin: <?= $data['nama_admin']; ?></p>
 <div class="form-buttons">
     <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
     <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
@@ -34,10 +33,10 @@ include 'koneksi.php';
 <?php
 if(isset($_POST['simpan'])){
     $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
+    $domisili = $_POST['domisili'];
     $no_hp = $_POST['no_hp'];
-    $query = "INSERT INTO pelanggan (nama, alamat, no_hp)
-              VALUES ('$nama', '$alamat', '$no_hp')";
+    $query = "INSERT INTO pelanggan (nama, domisili, no_hp)
+              VALUES ('$nama', '$domisili', '$no_hp')";
     mysqli_query($conn, $query);
     header("Location: data_pelanggan.php");
     exit;

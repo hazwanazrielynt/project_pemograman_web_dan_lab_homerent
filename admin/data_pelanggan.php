@@ -20,6 +20,7 @@ include 'koneksi.php';
         <li><a href="data_transaksi_admin.php">Data Transaksi</a></li>
         <li class="active">Data Pelanggan</li>
         <li><a href="data_admin.php">Data Admin</a></li>
+        <li><a href="logout.php" class="logout">Logout</a></li>
       </ul>
     </aside>
     <div class="main-content">
@@ -29,7 +30,7 @@ include 'koneksi.php';
           <tr>
               <th>ID</th>
               <th>Nama</th>
-              <th>Alamat</th>
+              <th>Domisili</th>
               <th>Nomor Telepon</th>
               <th>Aksi</th>
           </tr>
@@ -40,7 +41,7 @@ include 'koneksi.php';
               <tr>
                   <td><?= $row['id_pelanggan']; ?></td>
                   <td><?= $row['nama']; ?></td>
-                  <td><?= $row['alamat']; ?></td>
+                  <td><?= $row['domisili']; ?></td>
                   <td><?= $row['no_hp']; ?></td>
                   <td>
                       <a href="edit_pelanggan.php?id=<?= $row['id_pelanggan']; ?>">Edit</a> |

@@ -13,6 +13,14 @@ a:hover {
   color: #1E90FF;
     }
 
+.logout {
+  color: red !important;
+  font-weight: bold;
+}
+.logout:hover {
+  color: darkred !important;
+}
+
 /*layout 3 Kolom */
 .layout {
   display: grid;
@@ -112,7 +120,7 @@ a:hover {
   margin: 20px auto;
   background-color: #1E90FF; 
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 12px 25px;
   color: white;
   font-weight: bold;
@@ -205,7 +213,7 @@ table a:hover {
   margin: 10px auto;
   background-color: #1E90FF; 
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 12px 25px;
   color: white;
   font-weight: bold;
@@ -221,7 +229,7 @@ table a:hover {
 .form-add input, .form-add select {
   width: 100%;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 50px;
   border: 1px solid #ccc;
   margin-top: 5px;
   font-size: 14px;

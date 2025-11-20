@@ -20,6 +20,7 @@ include 'koneksi.php';
         <li><a href="data_transaksi_admin.php">Data Transaksi</a></li>
         <li><a href="data_pelanggan.php">Data Pelanggan</a></li>
         <li class="active">Data Admin</li>
+        <li><a href="logout.php" class="logout">Logout</a></li>
       </ul>
     </aside>
     <div class="main-content">

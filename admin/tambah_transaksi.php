@@ -26,7 +26,10 @@ include 'koneksi.php';
         <label>Nomor Telepon:</label><br>
         <input type="text" name="no_hp" required><br><br>
 
-        <label>Alamat Rumah yang Akan Disewa:</label><br>
+       <label>Domisili:</label><br>
+        <input type="text" name="domisili" required><br><br>
+
+        <label>Rumah yang Disewa:</label><br>
         <select name="id_rumah" required>
             <option value="">-- Pilih Rumah --</option>
 
@@ -59,12 +62,14 @@ if(isset($_POST['simpan'])){
 
     $nama            = $_POST['nama'];
     $no_hp           = $_POST['no_hp'];
+    $domisili        = $_POST['domisili'];
     $id_rumah        = $_POST['id_rumah'];
     $tanggal_sewa    = $_POST['tanggal_sewa'];
     $tanggal_kembali = $_POST['tanggal_kembali'];
 
-    // --- ID ADMIN (HARUSNYA DIAMBIL DARI SESSION LOGIN) ---
-    $id_admin = 1; // sementara default admin 1
+  session_start();
+    $id_admin = $_SESSION['admin_id'];
+    $nama_admin = $_SESSION['nama'];
 
     // Ambil harga rumah
     $getRumah = mysqli_query($conn, "SELECT harga_sewa FROM rumah WHERE id_rumah='$id_rumah'");
@@ -79,13 +84,13 @@ if(isset($_POST['simpan'])){
     $total_harga = $malam * $harga_per_malam;
 
     // Insert pelanggan
-    mysqli_query($conn, "INSERT INTO pelanggan (nama, no_hp) VALUES ('$nama', '$no_hp')");
+    mysqli_query($conn, "INSERT INTO pelanggan (nama, domisili, no_hp) VALUES ('$nama', '$domisili', '$no_hp')");
     $id_pelanggan = mysqli_insert_id($conn);
 
     // Insert ke tabel sewa
     $insert = mysqli_query($conn, 
-        "INSERT INTO sewa (id_pelanggan, id_admin, id_rumah, tanggal_sewa, tanggal_kembali, total_harga)
-         VALUES ('$id_pelanggan','$id_admin','$id_rumah','$tanggal_sewa','$tanggal_kembali','$total_harga')"
+        "INSERT INTO sewa (id_pelanggan, id_admin, id_rumah, tanggal_sewa, tanggal_kembali, total_harga, nama_admin)
+         VALUES ('$id_pelanggan','$id_admin','$id_rumah','$tanggal_sewa','$tanggal_kembali','$total_harga', '$nama_admin')"
     );
 
 if($insert){

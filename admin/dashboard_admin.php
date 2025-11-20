@@ -1,4 +1,12 @@
 <?php
+session_start();
+if(!isset($_SESSION['admin_id'])){
+    header("Location: login.php");
+    exit;
+}
+?>
+
+<?php
 include 'koneksi.php';
 
 $query_batam_center = mysqli_query($conn, "SELECT COUNT(*) AS total FROM rumah WHERE wilayah='Batam Center'");
@@ -9,6 +17,7 @@ $data_lubuk_baja = mysqli_fetch_assoc($query_lubuk_baja);
 
 $query_batu_aji = mysqli_query($conn, "SELECT COUNT(*) AS total FROM rumah WHERE wilayah='Batu Aji'");
 $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
+
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +27,7 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Admin</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
 <body>
   <div class="layout">  
@@ -28,11 +38,12 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
         <li><a href="data_transaksi_admin.php">Data Transaksi</a></li>
         <li><a href="data_pelanggan.php">Data Pelanggan</a></li>
         <li><a href="data_admin.php">Data Admin</a></li>
+        <li><a href="logout.php" class="logout">Logout</a></li>
       </ul>
     </aside>
     <main class="main-content">
       <div class="header">
-        <h2>KEEP GOING, ADMIN</h2>
+        <h2><?php echo "Selamat Datang, " . ($_SESSION['username'] ?? ''); ?></h2>
         <div class="datetime" id="datetime">
           <?php
           date_default_timezone_set('Asia/Jakarta'); 
