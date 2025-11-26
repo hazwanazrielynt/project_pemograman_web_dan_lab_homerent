@@ -54,7 +54,7 @@ if(isset($_POST['simpan'])){
     $alamat = $_POST['alamat'];
     $harga_sewa = $_POST['harga_sewa'];
     $status = $_POST['status'];
-    $folder = "uploads/";
+    $folder = "../uploads/";
     if (!is_dir($folder)) {
      mkdir($folder, 0777, true);
   }
@@ -62,7 +62,7 @@ if(isset($_POST['simpan'])){
 
     move_uploaded_file($tmp, $folder . $namaBaru);
     $query = "INSERT INTO rumah (foto_rumah, wilayah, alamat, harga_sewa, status)
-          VALUES ('$namaBaru', '$wilayah', '$alamat', '$harga_sewa', '$status')";
+         VALUES ('uploads/$namaBaru', '$wilayah', '$alamat', '$harga_sewa', '$status')";
   mysqli_query($conn, $query);
     header("Location: data_rumah_admin.php");
     exit;

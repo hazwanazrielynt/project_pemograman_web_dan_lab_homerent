@@ -19,11 +19,7 @@ $data = mysqli_fetch_assoc($result);
     <div class="content-box">
       <h2>Edit Data Rumah</h2>
 
-      <form method="POST" class="form-add" enctype="multipart/form-data">
-
-        <label>Foto Rumah:</label><br>
-        <input type="file" name="foto_rumah" required><br><br>
-
+      <form method="POST" class="form-add">
         <label>Wilayah:</label><br>
         <select name="wilayah">
           <option value="Batam Center" <?= $data['wilayah'] == "Batam Center" ? "selected" : "" ?>>Batam Center</option>
@@ -54,20 +50,17 @@ $data = mysqli_fetch_assoc($result);
   </div>
 <?php
 if(isset($_POST['update'])){
-    $foto = $_FILES["foto_rumah"] ["name"];
-    $tmp = $_FILES["foto_rumah"] ["tmp_name"];
     $wilayah = $_POST['wilayah'];
     $alamat = $_POST['alamat'];
     $harga_sewa = $_POST['harga_sewa'];
     $status = $_POST['status'];
-    $folder = "uploads/";
+    $folder = "../uploads/";
     if (!is_dir($folder)) {
      mkdir($folder, 0777, true);
   }
     $namaBaru = time() . "_" . $foto;
     move_uploaded_file($tmp, $folder . $namaBaru);
     $query = "UPDATE rumah SET
-              foto_rumah = '$namaBaru',
               wilayah = '$wilayah',
               alamat = '$alamat',
               harga_sewa = '$harga_sewa',

@@ -31,7 +31,7 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
           <a class="nav-link active" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sewa Rumah</a>
+          <a class="nav-link" href="sewa_batamcenter.php">Sewa Rumah</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">History</a>
@@ -52,7 +52,6 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
           $date = $datetime->format('d');   
           $month = $datetime->format('F');  
           $year = $datetime->format('Y');   
-
           echo "$day, $date $month $year";
           ?>
         </div>
@@ -60,8 +59,8 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
     <section class="content-box">
       <h2>HomeRent Present</h2>
       <p>Kami hadir membantu proses penyewaan rumah biar nggak ribet. Sistemnya udah otomatis mulai dari data pelanggan, daftar rumah, transaksi sewa secara otomatis.</p>
-      <button class="btn">Ayo Mulai Sewa Rumah</button>
-      <h3>Wilayah Rumah Yang Tersedia Untuk Disewa</h3>
+      <button class="btn" onclick="window.location.href='sewa_batamcenter.php'">Ayo Mulai Sewa Rumah</button>
+      <h3>Area Hunian yang Bisa Anda Sewa di HomeRent</h3>
       <div class="motor-grid">
         <div class="motor-card">
           <p>BATAM CENTER</p>
@@ -83,13 +82,48 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
     <h3>Promo</h3>
 
     <div class="promo-box">
-      <img src="promo.jpg" alt="Promo 1">
+      <img src="uploads/download (2).jpg" alt="Promo 1">
     </div>
 
     <div class="promo-box"></div>
     <div class="promo-box"></div>
   </aside>
 </div>
+<div class="layout-card">
+  <main class="main-content-card">
+    <section class="content-box-rumah">
+      <h2>Rumah Yang Paling Sering Disewa</h2>
+      <div class="container mt-1">
+        <div class="row justify-content-center">
+            <?php
+            $result = mysqli_query($conn, "SELECT * FROM rumah limit 4");
+            while ($row = mysqli_fetch_assoc($result)) {
+                $foto_rumah=($row['foto_rumah']);
+                $wilayah =($row['wilayah']);
+                $alamat=($row['alamat']);
+                $harga_sewa=number_format($row['harga_sewa'], 0, ',', '.');
+                $status=($row['status']);
+                $Class=($status === 'Tersedia' || strtolower($status) === 'available') ? 'success' : 'secondary';
+
+                echo
+                '<div class="col-6 col-md-4 col-lg-3 mb-4">
+                  <div class="card h-100">
+                   <img src="' . $foto_rumah . '" class="card-img-top" alt="' . $foto_rumah . '" style="height:200px;object-fit:cover;">
+                   <div class="card-body d-flex flex-column">
+                     <h5 class="card-title">' . $wilayah . '</h5>
+                     <p class="card-text small flex-grow-1">' . $alamat . '</p>
+                     <div class="d-flex justify-content-between align-items-center mt-2">
+                        <strong>Rp ' . $harga_sewa . '</strong>
+                        <span class="badge bg-' . $Class . '">' . $status . '</span>
+                      </div>
+                      <a href="form_pesanan.php?id=' . $row['id_rumah'] . '" class="btn btn-primary mt-3">Pesan</a>
+                     </div>
+                   </div>
+                  </div>';
+            }
+            ?>
+        </div>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

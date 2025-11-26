@@ -8,10 +8,23 @@ include 'koneksi.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Rumah Admin</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <li class="nav-item dropdown d-lg-none">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+    Navigasi Admin
+  </a>
+  <ul class="dropdown-menu text-center">
+    <li><a class="dropdown-item" href="dashboard_admin.php">Dashboard Admin</a></li>
+    <li><a class="dropdown-item" href="data_rumah_admin.php">Data Rumah</a></li>
+    <li><a class="dropdown-item" href="data_transaksi_admin.php">Data Transaksi</a></li>
+    <li><a class="dropdown-item" href="data_pelanggan.php">Data Pelanggan</a></li>
+    <li><a class="dropdown-item" href="data_admin.php">Data Admin</a></li>
+    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+  </ul>
+</li>
   <div class="layout">
     <aside class="sidebar-left">
       <ul>
@@ -43,7 +56,7 @@ include 'koneksi.php';
           ?>
               <tr>
                   <td><?= $row['id_rumah']; ?></td>
-                  <td><img src="uploads/<?= $row['foto_rumah']; ?>" alt="Foto Rumah" style="width:200px; height:auto;"></td>
+                  <td><img src="../<?= $row['foto_rumah']; ?>" alt="Foto Rumah" style="width:200px; height:auto;"></td>
                   <td><?= $row['wilayah']; ?></td>
                   <td><?= $row['alamat']; ?></td>
                   <td><?= $row['harga_sewa']; ?></td>
@@ -58,4 +71,6 @@ include 'koneksi.php';
     </div>
   </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</html>
 

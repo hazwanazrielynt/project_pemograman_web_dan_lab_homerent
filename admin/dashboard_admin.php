@@ -26,10 +26,23 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Admin</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <li class="nav-item dropdown d-lg-none">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+    Navigasi Admin
+  </a>
+  <ul class="dropdown-menu text-center">
+    <li><a class="dropdown-item" href="dashboard_admin.php">Dashboard Admin</a></li>
+    <li><a class="dropdown-item" href="data_rumah_admin.php">Data Rumah</a></li>
+    <li><a class="dropdown-item" href="data_transaksi_admin.php">Data Transaksi</a></li>
+    <li><a class="dropdown-item" href="data_pelanggan.php">Data Pelanggan</a></li>
+    <li><a class="dropdown-item" href="data_admin.php">Data Admin</a></li>
+    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+  </ul>
+</li>
   <div class="layout">  
     <aside class="sidebar-left">
       <ul>
@@ -43,7 +56,7 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
     </aside>
     <main class="main-content">
       <div class="header">
-        <h2><?php echo "Selamat Datang, " . ($_SESSION['username'] ?? ''); ?></h2>
+        <h2><?php echo "Selamat Datang, " . ($_SESSION['nama'] ?? ''); ?></h2>
         <div class="datetime" id="datetime">
           <?php
           date_default_timezone_set('Asia/Jakarta'); 
@@ -81,4 +94,5 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
       </section>
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>
