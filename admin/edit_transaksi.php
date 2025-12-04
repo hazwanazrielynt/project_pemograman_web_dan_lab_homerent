@@ -8,12 +8,14 @@ $data = mysqli_fetch_assoc($result);
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Transaksi</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
+
 <body>
   <div class="main-content">
     <div class="content-box">
@@ -42,8 +44,8 @@ $data = mysqli_fetch_assoc($result);
       </form>
     </div>
   </div>
-<?php
-if(isset($_POST['update'])){
+  <?php
+  if (isset($_POST['update'])) {
     $nama_rumah = $_POST['nama_rumah'];
     $wilayah = $_POST['wilayah'];
     $alamat = $_POST['alamat'];
@@ -59,7 +61,8 @@ if(isset($_POST['update'])){
     mysqli_query($conn, $query);
     header("Location: data_transaksi_admin.php");
     exit;
-}
-?>
+  }
+  ?>
 </body>
+
 </html>

@@ -8,12 +8,14 @@ $data = mysqli_fetch_assoc($result);
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Pelanggan</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
+
 <body>
   <div class="main-content">
     <div class="content-box">
@@ -27,7 +29,7 @@ $data = mysqli_fetch_assoc($result);
 
         <label>Nomor Telepon:</label><br>
         <input type="text" name="no_hp" value="<?= $data['no_hp']; ?>" required><br><br>
-        
+
         <div class="form-buttons">
           <button type="submit" name="update" class="btn btn-primary">Update</button>
           <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
@@ -37,8 +39,8 @@ $data = mysqli_fetch_assoc($result);
     </div>
 
   </div>
-<?php
-if(isset($_POST['update'])){
+  <?php
+  if (isset($_POST['update'])) {
     $nama = $_POST['nama'];
     $domisili = $_POST['domisili'];
     $no_hp = $_POST['no_hp'];
@@ -53,8 +55,9 @@ if(isset($_POST['update'])){
 
     header("Location: data_pelanggan.php");
     exit;
-}
-?>
+  }
+  ?>
 
 </body>
+
 </html>

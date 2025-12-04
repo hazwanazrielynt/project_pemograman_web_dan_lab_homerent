@@ -8,12 +8,14 @@ $data = mysqli_fetch_assoc($result);
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Admin</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
+
 <body>
   <div class="main-content">
     <div class="content-box">
@@ -24,10 +26,10 @@ $data = mysqli_fetch_assoc($result);
 
         <label>Password:</label><br>
         <input type="text" name="password" value="<?= $data['password']; ?>" required><br><br>
-    
+
         <label>Nama:</label><br>
         <input type="text" name="nama" value="<?= $data['nama']; ?>" required><br><br>
-        
+
         <div class="form-buttons">
           <button type="submit" name="update" class="btn btn-primary">Update</button>
           <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
@@ -35,8 +37,8 @@ $data = mysqli_fetch_assoc($result);
       </form>
     </div>
   </div>
-<?php
-if(isset($_POST['update'])){
+  <?php
+  if (isset($_POST['update'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $nama = $_POST['nama'];
@@ -48,7 +50,8 @@ if(isset($_POST['update'])){
     mysqli_query($conn, $query);
     header("Location: data_admin.php");
     exit;
-}
-?>
+  }
+  ?>
 </body>
+
 </html>

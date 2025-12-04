@@ -4,12 +4,14 @@ include 'koneksi.php';
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Pelanggan</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
+
 <body>
   <div class="main-content">
     <div class="content-box">
@@ -23,15 +25,15 @@ include 'koneksi.php';
         <input type="text" name="domisili" required><br><br>
         <label>Nomor Telepon:</label><br>
         <input type="text" name="no_hp" required><br><br>
-<div class="form-buttons">
-    <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
-    <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
-</div>
+        <div class="form-buttons">
+          <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
+          <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
+        </div>
       </form>
     </div>
   </div>
-<?php
-if(isset($_POST['simpan'])){
+  <?php
+  if (isset($_POST['simpan'])) {
     $nama = $_POST['nama'];
     $domisili = $_POST['domisili'];
     $no_hp = $_POST['no_hp'];
@@ -40,7 +42,8 @@ if(isset($_POST['simpan'])){
     mysqli_query($conn, $query);
     header("Location: data_pelanggan.php");
     exit;
-}
-?>
+  }
+  ?>
 </body>
+
 </html>

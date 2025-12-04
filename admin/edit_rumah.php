@@ -8,12 +8,14 @@ $data = mysqli_fetch_assoc($result);
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Rumah</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
+
 <body>
   <div class="main-content">
     <div class="content-box">
@@ -30,6 +32,9 @@ $data = mysqli_fetch_assoc($result);
 
         <label>Alamat:</label><br>
         <input type="text" name="alamat" value="<?= $data['alamat']; ?>" required><br><br>
+
+        <label>Fasilitas:</label><br>
+        <input type="text" name="fasilitas" value="<?= $data['fasilitas']; ?>" required><br><br>
 
         <label>Harga Sewa:</label><br>
         <input type="number" name="harga_sewa" value="<?= $data['harga_sewa']; ?>" required><br><br>
@@ -48,28 +53,31 @@ $data = mysqli_fetch_assoc($result);
       </form>
     </div>
   </div>
-<?php
-if(isset($_POST['update'])){
+  <?php
+  if (isset($_POST['update'])) {
     $wilayah = $_POST['wilayah'];
     $alamat = $_POST['alamat'];
+    $fasilitas = $_POST['fasilitas'];
     $harga_sewa = $_POST['harga_sewa'];
     $status = $_POST['status'];
     $folder = "../uploads/";
     if (!is_dir($folder)) {
-     mkdir($folder, 0777, true);
-  }
+      mkdir($folder, 0777, true);
+    }
     $namaBaru = time() . "_" . $foto;
     move_uploaded_file($tmp, $folder . $namaBaru);
     $query = "UPDATE rumah SET
               wilayah = '$wilayah',
               alamat = '$alamat',
+              fasilitas = '$fasilitas',
               harga_sewa = '$harga_sewa',
               status = '$status'
               WHERE id_rumah = $id";
     mysqli_query($conn, $query);
     header("Location: data_rumah_admin.php");
     exit;
-}
-?>
+  }
+  ?>
 </body>
+
 </html>
