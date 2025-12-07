@@ -3,8 +3,7 @@ include 'koneksi.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@ include 'koneksi.php';
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
   <li class="nav-item dropdown d-lg-none">
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
@@ -50,6 +48,9 @@ include 'koneksi.php';
           <th>Alamat Rumah yang Disewa</th>
           <th>Tanggal Sewa</th>
           <th>Tanggal Kembali</th>
+          <th>Lama Sewa (Bulan)</th>
+          <th>Metode Pembayaran</th>
+          <th>Status Pembayaran</th>
           <th>Total Harga</th>
           <th>Aksi
           </th>
@@ -62,6 +63,9 @@ include 'koneksi.php';
         r.alamat,
         s.tanggal_sewa,
         s.tanggal_kembali,
+        s.lama_sewa,
+        s.metode_pembayaran,
+        s.status_pembayaran,
         s.total_harga
     FROM sewa s
     JOIN pelanggan p ON s.id_pelanggan = p.id_pelanggan
@@ -78,7 +82,16 @@ include 'koneksi.php';
             <td><?= $row['alamat']; ?></td>
             <td><?= $row['tanggal_sewa']; ?></td>
             <td><?= $row['tanggal_kembali']; ?></td>
-            <td><?= $row['total_harga']; ?></td>
+            <td><?= $row['lama_sewa']; ?></td>
+            <td><?= $row['metode_pembayaran']; ?></td>  
+            <td>
+              <?php if ($row['status_pembayaran'] == 'LUNAS') { ?>
+                <span style="color:green;font-weight:bold;">LUNAS</span>
+              <?php } else { ?>
+                <span style="color:orange;font-weight:bold;">BELUM LUNAS</span>
+              <?php } ?>
+            </td>
+            <td><?= number_format($row['total_harga'],0,',','.') ?></td>
             <td>
               <a href="edit_transaksi.php?id=<?= $row['id_sewa']; ?>">Edit</a> |
               <a href="hapus_transaksi.php?id=<?= $row['id_sewa']; ?>">Hapus</a>
@@ -90,5 +103,4 @@ include 'koneksi.php';
   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </html>

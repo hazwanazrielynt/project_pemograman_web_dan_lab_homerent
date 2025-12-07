@@ -16,7 +16,7 @@ $data = $query->get_result()->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -37,10 +37,10 @@ $data = $query->get_result()->fetch_assoc();
           <a class="nav-link" href="dashboard.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="sewa_batamcenter.php">Sewa Rumah</a>
+          <a class="nav-link" href="sewa_batamcenter.php">Sewa Rumah</a>  
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">History</a>
+          <a class="nav-link" href="history.php">History</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="profile.php">Profile</a>

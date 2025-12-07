@@ -17,7 +17,7 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -41,7 +41,7 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
           <a class="nav-link" href="sewa_batamcenter.php">Sewa Rumah</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">History</a>
+          <a class="nav-link" href="history.php">History</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="profile.php">Profile</a>
@@ -88,21 +88,21 @@ $data_batu_aji = mysqli_fetch_assoc($query_batu_aji);
       </section>
     </main>
     <aside class="sidebar-right">
-      <h3>Promo</h3>
+      <h3>INFORMASI</h3>
 
       <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
 
           <div class="carousel-item active">
-            <img src="uploads/download (2).jpg" class="d-block w-100 promo-img" alt="Promo 1">
+            <img src="uploads/maintenance.png" class="d-block w-100 promo-img" alt="Promo 1">
           </div>
 
           <div class="carousel-item">
-            <img src="uploads/download.jpg" class="d-block w-100 promo-img" alt="Promo 2">
+            <img src="uploads/maintenance.png" class="d-block w-100 promo-img" alt="Promo 2">
           </div>
 
           <div class="carousel-item">
-            <img src="uploads/lalapan.jpg" class="d-block w-100 promo-img" alt="Promo 3">
+            <img src="uploads/maintenance.png" class="d-block w-100 promo-img" alt="Promo 3">
           </div>
 
         </div>

@@ -2,41 +2,40 @@
 include 'koneksi.php';
 
 $id = $_GET['id'];
-$result = mysqli_query($conn, "SELECT * FROM sewa WHERE id_sewa = $id");
+
+$result = mysqli_query($conn, "SELECT * FROM sewa WHERE id_sewa = '$id'");
 $data = mysqli_fetch_assoc($result);
+
+if (!$data) {
+  echo "data transaksi tidak ditemukan!";
+  exit;
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Transaksi</title>
-  <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="style.css?v=<?= time(); ?>">
 </head>
-
 <body>
   <div class="main-content">
     <div class="content-box">
       <h2>Edit Data Transaksi</h2>
       <form method="POST" class="form-add">
-
-        <label>Nama Pelanggan:</label><br>
-        <input type="text" name="nama_pelanggan" value="<?= $data['nama_pelanggan']; ?>" required><br><br>
-
-        <label>Nama Admin:</label><br>
-        <input type="text" name="nama_admin" value="<?= $data['nama_admin']; ?>" required><br><br>
-
-        <label>Nama Rumah:</label><br>
-        <input type="text" name="nama_rumah" value="<?= $data['nama_rumah']; ?>" required><br><br>
-
         <label>Tanggal Sewa:</label><br>
-        <input type="date" name="tanggal_sewa" value="<?= $data['tanggal_sewa']; ?>" required><br><br>
-
+        <input type="date" name="tanggal_sewa" value="<?= $data['tanggal_sewa']; ?>" required>
+        <br><br>
         <label>Tanggal Kembali:</label><br>
-        <input type="date" name="tanggal_kembali" value="<?= $data['tanggal_kembali']; ?>" required><br><br>
-
+        <input type="date" name="tanggal_kembali" value="<?= $data['tanggal_kembali']; ?>" required>
+        <br><br>
+        <label>Status Pembayaran:</label><br>
+        <select name="status_pembayaran" required>
+          <option value="BELUM LUNAS" <?= ($data['status_pembayaran'] == 'BELUM LUNAS') ? 'selected' : ''; ?>>BELUM LUNAS</option>
+          <option value="LUNAS" <?= ($data['status_pembayaran'] == 'LUNAS') ? 'selected' : ''; ?>>LUNAS</option>
+        </select>
+        <br><br>
         <div class="form-buttons">
           <button type="submit" name="update" class="btn btn-primary">Update</button>
           <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
@@ -46,23 +45,40 @@ $data = mysqli_fetch_assoc($result);
   </div>
   <?php
   if (isset($_POST['update'])) {
-    $nama_rumah = $_POST['nama_rumah'];
-    $wilayah = $_POST['wilayah'];
-    $alamat = $_POST['alamat'];
-    $harga_sewa = $_POST['harga_sewa'];
-    $status = $_POST['status'];
-    $query = "UPDATE rumah SET
-              nama_rumah = '$nama_rumah',
-              wilayah = '$wilayah',
-              alamat = '$alamat',
-              harga_sewa = '$harga_sewa',
-              status = '$status'
-              WHERE id_rumah = $id";
-    mysqli_query($conn, $query);
+
+    $tanggal_sewa       = $_POST['tanggal_sewa'];
+    $tanggal_kembali    = $_POST['tanggal_kembali'];
+    $status_pembayaran  = $_POST['status_pembayaran'];
+
+    $getRumah = mysqli_query($conn, "
+      SELECT rumah.harga_sewa 
+      FROM sewa 
+      JOIN rumah ON sewa.id_rumah = rumah.id_rumah 
+      WHERE sewa.id_sewa = '$id'
+    ");
+
+    $dataRumah = mysqli_fetch_assoc($getRumah);
+    $harga_per_malam = $dataRumah['harga_sewa'];
+
+    $malam = (strtotime($tanggal_kembali) - strtotime($tanggal_sewa)) / 86400;
+    if ($malam < 1) {
+      $malam = 1;
+    }
+
+    $total_harga = $malam * $harga_per_malam;
+
+    mysqli_query($conn, "
+      UPDATE sewa SET
+        tanggal_sewa = '$tanggal_sewa',
+        tanggal_kembali = '$tanggal_kembali',
+        total_harga = '$total_harga',
+        status_pembayaran = '$status_pembayaran'
+      WHERE id_sewa = '$id'
+    ");
+
     header("Location: data_transaksi_admin.php");
     exit;
   }
   ?>
 </body>
-
 </html>

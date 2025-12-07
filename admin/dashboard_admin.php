@@ -26,7 +26,7 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -35,9 +35,7 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-
     <li class="nav-item dropdown d-lg-none">
         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Navigasi Admin</a>
         <ul class="dropdown-menu text-center">
@@ -49,7 +47,6 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
         </ul>
     </li>
-
     <div class="layout">
         <aside class="sidebar-left">
             <ul>
@@ -61,12 +58,9 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
                 <li><a href="logout.php" class="logout">Logout</a></li>
             </ul>
         </aside>
-
         <main class="main-content">
-
-            <!-- Header -->
             <div class="header">
-                <h2><?php echo "Selamat Datang, " . ($_SESSION['nama'] ?? ''); ?></h2>
+                <h2><?php echo "Selamat Datang, " . ($_SESSION['admin_nama'] ?? ''); ?></h2>
                 <div class="datetime">
                     <?php
                     date_default_timezone_set('Asia/Jakarta');
@@ -75,7 +69,6 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
                 </div>
             </div>
             <section class="content-box">
-
                 <h2>Kata-Kata Hari ini Untuk Admin</h2>
                 <p>Semangat Hari Ini UAS, Semoga Nilai A Untuk Semua Admin!</p>
 
@@ -91,7 +84,6 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
                         <p>BATU AJI</p><span><?= $data_batu_aji['total']; ?></span>
                     </div>
                 </div>
-
                 <?php
                 $year = date("Y");
                 $month = date("n");
@@ -111,9 +103,7 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
                     11 => "November",
                     12 => "Desember"
                 ];
-
                 $dayNames = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
-
                 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
                 $firstDay = date("w", strtotime("$year-$month-1"));
                 ?>
@@ -122,7 +112,6 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
                         <div class="card p-3 calendar-card">
                             <h4>Kalender</h4>
                             <h5 class="text-center"><?= $monthNames[$month] . " " . $year; ?></h5>
-
                             <div class="bootstrap-calendar">
                                 <?php foreach ($dayNames as $d): ?>
                                     <div class="day-name"><?= $d ?></div>
@@ -139,7 +128,6 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
                         </div>
                     </div>
                     <div class="col-md-4">
-
                         <div class="card p-3 mb-3 text-center stat-card">
                             <h5>Sewa Hari Ini</h5>
                             <h2 class="text-primary fw-bold"><?= $data_harian['total']; ?></h2>
@@ -149,17 +137,11 @@ $data_bulanan = mysqli_fetch_assoc(mysqli_query($conn, "
                             <h5>Sewa Bulan Ini</h5>
                             <h2 class="text-success fw-bold"><?= $data_bulanan['total']; ?></h2>
                         </div>
-
                     </div>
-
                 </div>
-
             </section>
         </main>
-
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

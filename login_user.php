@@ -82,7 +82,7 @@ if (isset($_POST['register'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Signup Form</title>
+    <title>Login/Signup homerent</title>
     <link rel="stylesheet" href="stylelogin.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -104,10 +104,7 @@ if (isset($_POST['register'])) {
                   <div class="input-box">
                       <input type="password" name="password" placeholder="Password" required>
                       <i class='bx bxs-lock-alt' ></i>
-                  </div>
-                  <div class="forgot-link">
-                      <a href="#">Forgot Password?</a>
-                  </div>
+                  </div>    
                   <button type="submit" name="login" class="btn">Login</button>
               </form>
           </div>

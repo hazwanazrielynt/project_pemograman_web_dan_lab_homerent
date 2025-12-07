@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -71,9 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label>Password</label>
             <input type="text" name="password" value="<?= $data['password']; ?>" required>
 
-            <button type="submit" name="update" class="btn-save">Simpan Perubahan</button>
-
-            <a href="profile.php" class="back-link">Kembali ke Profil</a>
+            <button type="submit" name="update" class="btn btn-danger">Simpan Perubahan</button>
+            <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
         </form>
 
     </div>

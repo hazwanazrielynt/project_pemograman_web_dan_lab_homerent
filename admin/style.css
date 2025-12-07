@@ -285,7 +285,7 @@ table a:hover {
   color: #333 !important;
 }
 .calendar-card {
-    width: 600px;
+    width: 545px;
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -318,7 +318,7 @@ table a:hover {
   font-weight: bold;
 }
 .stat-card {
-    max-width: 250px;     
+    max-width: 200px;     
     margin: 10px auto;    
     border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);

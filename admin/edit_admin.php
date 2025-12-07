@@ -7,15 +7,13 @@ $data = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Admin</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
-
 <body>
   <div class="main-content">
     <div class="content-box">
@@ -23,13 +21,10 @@ $data = mysqli_fetch_assoc($result);
       <form method="POST" class="form-add">
         <label>Username:</label><br>
         <input type="text" name="username" value="<?= $data['username']; ?>" required><br><br>
-
         <label>Password:</label><br>
         <input type="text" name="password" value="<?= $data['password']; ?>" required><br><br>
-
         <label>Nama:</label><br>
         <input type="text" name="nama" value="<?= $data['nama']; ?>" required><br><br>
-
         <div class="form-buttons">
           <button type="submit" name="update" class="btn btn-primary">Update</button>
           <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
@@ -53,5 +48,4 @@ $data = mysqli_fetch_assoc($result);
   }
   ?>
 </body>
-
 </html>

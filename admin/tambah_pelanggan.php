@@ -3,24 +3,20 @@ include 'koneksi.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Pelanggan</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
-
 <body>
   <div class="main-content">
     <div class="content-box">
       <h2>Tambah Data Pelanggan</h2>
-
       <form method="POST" class="form-add">
         <label>Nama:</label><br>
         <input type="text" name="nama" required><br><br>
-
         <label>Domisili:</label><br>
         <input type="text" name="domisili" required><br><br>
         <label>Nomor Telepon:</label><br>
@@ -45,5 +41,4 @@ include 'koneksi.php';
   }
   ?>
 </body>
-
 </html>

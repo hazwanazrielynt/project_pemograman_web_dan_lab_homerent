@@ -235,21 +235,19 @@ body {
 .content-area {
   flex: 1;
 }
-/* Tinggi box promo */
+/* promo */
 #promoCarousel {
   height: 180px;
   overflow: hidden;
   border-radius: 12px;
 }
 
-/* Biar item memenuhi box */
 .promo-img {
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
 }
 
-/* Ubah slide Bootstrap jadi VERTIKAL */
 #promoCarousel.vertical .carousel-item-next,
 #promoCarousel.vertical .carousel-item-start {
   transform: translateY(100%);
@@ -260,7 +258,6 @@ body {
   transform: translateY(-100%);
 }
 
-/* Animasi smooth */
 #promoCarousel .carousel-item {
   transition: transform 0.6s ease-in-out;
 }
@@ -333,6 +330,47 @@ body {
   margin-top: 15px;
   color: #4C2EFF;
   text-decoration: none;
+}
+
+.btn-danger {
+  background-color: #ff4d4d;
+}
+
+.btn-danger:hover {
+  background-color: #d40000;
+}
+
+/* table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* kepala table */
+table th {
+  background-color: #1E90FF;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+/* baris */
+table td {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* baris genap*/
+table tr:nth-child(even) {
+  background-color: #f4faff;
 }
 
 /* layar responsif */

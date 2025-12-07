@@ -3,26 +3,20 @@ include 'koneksi.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Rumah</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
-
 <body>
   <div class="main-content">
-
     <div class="content-box">
       <h2>Tambah Data Rumah</h2>
-
       <form method="POST" class="form-add" enctype="multipart/form-data">
-
         <label>Foto Rumah:</label><br>
         <input type="file" name="foto_rumah" required><br><br>
-
         <label>Wilayah:</label><br>
         <select name="wilayah">
           <option value="Batam Center">Batam Center</option>
@@ -31,13 +25,10 @@ include 'koneksi.php';
         </select> <br><br>
         <label>Alamat:</label><br>
         <input type="text" name="alamat" required><br><br>
-
         <label>Fasilitas:</label><br>
         <input type="text" name="fasilitas" required><br><br>
-
         <label>Harga Sewa:</label><br>
         <input type="number" name="harga_sewa" required><br><br>
-
         <label>Status:</label><br>
         <select name="status">
           <option value="Tersedia">Tersedia</option>
@@ -75,5 +66,4 @@ include 'koneksi.php';
   }
   ?>
 </body>
-
 </html>

@@ -7,20 +7,17 @@ $data = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Rumah</title>
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
-
 <body>
   <div class="main-content">
     <div class="content-box">
       <h2>Edit Data Rumah</h2>
-
       <form method="POST" class="form-add">
         <label>Wilayah:</label><br>
         <select name="wilayah">
@@ -29,23 +26,18 @@ $data = mysqli_fetch_assoc($result);
           <option value="Batu Aji" <?= $data['wilayah'] == "Batu Aji" ? "selected" : "" ?>>Batu Aji</option>
         </select>
         <br><br>
-
         <label>Alamat:</label><br>
         <input type="text" name="alamat" value="<?= $data['alamat']; ?>" required><br><br>
-
         <label>Fasilitas:</label><br>
         <input type="text" name="fasilitas" value="<?= $data['fasilitas']; ?>" required><br><br>
-
         <label>Harga Sewa:</label><br>
         <input type="number" name="harga_sewa" value="<?= $data['harga_sewa']; ?>" required><br><br>
-
         <label>Status:</label><br>
         <select name="status">
           <option value="Tersedia" <?= $data['status'] == "Tersedia" ? "selected" : "" ?>>Tersedia</option>
           <option value="Sedang Disewa" <?= $data['status'] == "Sedang Disewa" ? "selected" : "" ?>>Sedang Disewa</option>
         </select>
         <br><br>
-
         <div class="form-buttons">
           <button type="submit" name="update" class="btn btn-primary">Update</button>
           <button type="button" onclick="window.history.back();" class="btn btn-danger">Kembali</button>
@@ -79,5 +71,4 @@ $data = mysqli_fetch_assoc($result);
   }
   ?>
 </body>
-
 </html>

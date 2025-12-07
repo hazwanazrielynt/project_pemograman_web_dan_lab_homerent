@@ -3,8 +3,7 @@ include 'koneksi.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@ include 'koneksi.php';
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
   <li class="nav-item dropdown d-lg-none">
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
@@ -39,7 +37,6 @@ include 'koneksi.php';
       </ul>
     </aside>
     <div class="main-content">
-
       <h2>Manajemen Data Rumah</h2>
       <a href="tambah_rumah.php" class="btn btn-primary">Tambah Rumah</a>
       <table border="1" cellpadding="10">
@@ -67,7 +64,7 @@ include 'koneksi.php';
             <td><?= $row['status']; ?></td>
             <td>
               <a href="edit_rumah.php?id=<?= $row['id_rumah']; ?>">Edit</a> |
-              <a href="hapus_rumah.php?id=<?= $row['id_rumah']; ?>">Hapus</a>
+              <a href="hapus_rumah.php?id=<?= $row['id_rumah']; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?');">Hapus</a>
             </td>
           </tr>
         <?php } ?>
@@ -76,5 +73,4 @@ include 'koneksi.php';
   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </html>

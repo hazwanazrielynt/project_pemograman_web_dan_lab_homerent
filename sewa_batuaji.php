@@ -3,7 +3,7 @@ include 'koneksi.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -29,7 +29,7 @@ include 'koneksi.php';
           <a class="nav-link active" href="sewa_batamcenter.php">Sewa Rumah</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">History</a>
+          <a class="nav-link" href="history.php">History</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="profile.php">Profile</a>
@@ -53,9 +53,9 @@ include 'koneksi.php';
 
     <aside class="sidebar-left">
       <ul>
-        <li class="active">Batam Center</li>
+        <li><a href="sewa_batamcenter.php">Batam Center</a></li>
         <li><a href="sewa_lubukbaja.php">Lubuk Baja</a></li>
-        <li><a href="sewa_batuaji.php">Batu Aji</a></li>
+        <li class="active"><a href="sewa_batuaji.php">Batu Aji</a></li>
       </ul>
     </aside>
 

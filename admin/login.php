@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
 
             $_SESSION['admin_id'] = $user['id_admin'];
             $_SESSION['username'] = $user['username'];
-            $_SESSION['admin_nama'] = $user['admin_nama'];
+            $_SESSION['admin_nama'] = $user['nama'];
 
             header("Location: dashboard_admin.php");
             exit;
@@ -33,14 +33,12 @@ if (isset($_POST['login'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin</title>
     <link rel="stylesheet" href="stylelogin.css?v=<?php echo time(); ?>">
 </head>
-
 <body>
     <div class="container">
         <div class="form-box login">
@@ -60,9 +58,7 @@ if (isset($_POST['login'])) {
                 <button type="submit" name="login" class="btn">Login</button>
             </form>
         </div>
-
     </div>
     </div>
 </body>
-
 </html>
