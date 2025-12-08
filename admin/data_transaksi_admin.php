@@ -94,7 +94,7 @@ include 'koneksi.php';
             <td><?= number_format($row['total_harga'],0,',','.') ?></td>
             <td>
               <a href="edit_transaksi.php?id=<?= $row['id_sewa']; ?>">Edit</a> |
-              <a href="hapus_transaksi.php?id=<?= $row['id_sewa']; ?>">Hapus</a>
+              <a href="hapus_transaksi.php?id=<?= $row['id_sewa']; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?');">Hapus</a>
             </td>
           </tr>
         <?php } ?>

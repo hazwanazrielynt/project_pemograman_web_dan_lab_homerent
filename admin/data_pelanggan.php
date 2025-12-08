@@ -58,7 +58,7 @@ include 'koneksi.php';
             <td><?= $row['no_hp']; ?></td>
             <td>
               <a href="edit_pelanggan.php?id=<?= $row['id_pelanggan']; ?>">Edit</a> |
-              <a href="hapus_pelanggan.php?id=<?= $row['id_pelanggan']; ?>">Hapus</a>
+              <a href="hapus_pelanggan.php?id=<?= $row['id_pelanggan']; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?');">Hapus</a>
             </td>
           </tr>
         <?php } ?>

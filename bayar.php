@@ -8,7 +8,7 @@ if (isset($_POST['bayar'])) {
     SET status_pembayaran='LUNAS' 
     WHERE id_sewa='$id'
   ");
-  echo "✅ Pembayaran Berhasil";
+  echo "HOREEEE!! Pembayaran Berhasil";
 }
 ?>
 
