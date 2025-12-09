@@ -46,7 +46,7 @@ if (isset($_GET['wilayah'])) {
 
       <label>Wilayah:</label>
       <select id="wilayah" required>
-        <option value="">-- Pilih Wilayah --</option>
+        <option value="">Pilih Wilayah</option>
         <option value="Batam Center">Batam Center</option>
         <option value="Lubuk Baja">Lubuk Baja</option>
         <option value="Batu Aji">Batu Aji</option>
@@ -54,7 +54,7 @@ if (isset($_GET['wilayah'])) {
 
       <label>Rumah:</label>
       <select name="id_rumah" id="rumah" required>
-        <option value="">-- Pilih Rumah --</option>
+        <option value="">Pilih Rumah</option>
       </select>
 
       <label>Tanggal Sewa:</label>
@@ -62,7 +62,7 @@ if (isset($_GET['wilayah'])) {
 
       <label>Lama Sewa (bulan)</label>
       <select name="lama_sewa" required>
-        <option value="">-- Pilih Lama Sewa --</option>
+        <option value="">Pilih Lama Sewa</option>
         <option value="1">1 Bulan</option>
         <option value="2">2 Bulan</option>
         <option value="3">3 Bulan</option>

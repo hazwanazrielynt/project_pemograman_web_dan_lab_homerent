@@ -103,7 +103,7 @@ if (isset($_POST['konfirmasi'])) {
         <input type="hidden" name="lama_sewa" value="<?= $lama_sewa ?>">
         <label><b>Metode Pembayaran</b></label>
         <select name="metode_pembayaran" class="form-control mb-4" required>
-            <option value="">-- Pilih Metode Pembayaran --</option>
+            <option value="">Pilih Metode Pembayaran</option>
             <option value="Tunai">Tunai</option>
             <option value="QRIS">QRIS</option>
         </select>

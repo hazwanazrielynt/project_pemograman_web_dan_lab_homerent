@@ -32,7 +32,7 @@ if (!$data) {
       <p class="mb-4 text-muted">Silakan scan QR untuk menyelesaikan pembayaran</p>
       <div style="margin: 20px 0;">
         <img 
-          src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=http://192.168.1.8/Lab/admin/bayar.php?id_sewa=<?= $id ?>" 
+          src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=http://10.201.37.8/Lab/admin/bayar.php?id_sewa=<?= $id ?>" 
           style="
             width:260px; 
             border-radius:16px; 
